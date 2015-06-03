@@ -1,4 +1,4 @@
-punycode is an R package to work with punycode (RFC3492) domains.
+punycode is an R package to work with punycode (RFC3492) domains and relies on the [GNU libidn](http://www.gnu.org/software/libidn/) library for the hard parts.
 
 The following functions are implemented:
 
@@ -15,29 +15,12 @@ devtools::install_github("hrbrmstr/punycode")
 
 ``` r
 library(punycode)
-```
 
-    ## Loading required package: devtools
-    ## Loading required package: httr
-    ## Loading required package: stringr
-    ## Loading required package: dplyr
-    ## 
-    ## Attaching package: 'dplyr'
-    ## 
-    ## The following object is masked from 'package:stats':
-    ## 
-    ##     filter
-    ## 
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     intersect, setdiff, setequal, union
-
-``` r
 # current verison
 packageVersion("punycode")
 ```
 
-    ## [1] '1.0'
+    ## [1] '0.1.0'
 
 ``` r
 ascii_doms <- c("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net",
@@ -88,7 +71,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Wed Jun  3 13:49:14 2015"
+    ## [1] "Wed Jun  3 13:59:05 2015"
 
 ``` r
 test_dir("tests/")
