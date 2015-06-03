@@ -11,8 +11,7 @@
 #' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html}
 #'
 #' @examples
-#' \dontrun{
-#' }
+#' puny_encode("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net")
 #' @export
 puny_encode <- function(domains) {
     .Call('punycode_puny_encode', PACKAGE = 'punycode', domains)
@@ -28,10 +27,25 @@ puny_encode <- function(domains) {
 #' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html}
 #'
 #' @examples
-#' \dontrun{
-#' }
+#' puny_decode("новый-год.com")
 #' @export
 puny_decode <- function(domains) {
     .Call('punycode_puny_decode', PACKAGE = 'punycode', domains)
+}
+
+#' @title Check domains for validity
+#' @description Check international domain names for charset validity
+#'
+#' @param domains character vector of domains
+#'
+#' @return a logical vector
+#'
+#' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html}
+#'
+#' @examples
+#' puny_tld_check("gr€€n.no")
+#' @export
+puny_tld_check <- function(domains) {
+    .Call('punycode_puny_tld_check', PACKAGE = 'punycode', domains)
 }
 

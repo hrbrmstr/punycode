@@ -16,8 +16,7 @@ a character vector of punycode domains
 Converts IDNA domains to punycode
 }
 \examples{
-\dontrun{
-}
+puny_decode("новый-год.com")
 }
 \seealso{
 \url{http://www.faqs.org/rfcs/rfc3492.html}

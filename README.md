@@ -2,8 +2,9 @@ punycode is an R package to work with punycode (RFC3492) domains and relies on t
 
 The following functions are implemented:
 
--   `puny_encode`
--   `puny_deocde`
+-   `puny_encode` : Encode domains
+-   `puny_deocde` : Decode domains
+-   `puny_tld_validate` : Validate charset of domains (i.e. is allowed in TLD)
 
 ### Installation
 
@@ -44,6 +45,11 @@ intnl_doms <- c("ثبت-دومین.com",
 "เด็ก-ภูเก็ต.com",
 "ایران-هاست.com")
 
+
+for_valid <- c("gr€€n.no", "זגורי-אימפריה-לצפייה-ישירה.net", "ثبت-دومین.com",
+"טיול-לפיליפינים.net", "xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net", "xn----0mcgcx6kho30j.com",
+"xn----9hciecaaawbbp1b1cd.net", "rudis.net")
+
 puny_encode(ascii_doms)
 ```
 
@@ -62,6 +68,12 @@ puny_decode(intnl_doms)
     ## [7] "xn----peurf0asz4dzaln0qm161er8pd.biz"      "xn----twfb7ei8dwjzbf9dg.com"              
     ## [9] "xn----ymcabp2br3mk93k.com"
 
+``` r
+puny_tld_check(for_valid)
+```
+
+    ## [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+
 ### Test Results
 
 ``` r
@@ -71,7 +83,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Wed Jun  3 14:05:37 2015"
+    ## [1] "Wed Jun  3 14:47:31 2015"
 
 ``` r
 test_dir("tests/")
@@ -79,3 +91,4 @@ test_dir("tests/")
 
     ## encoding : ..
     ## decoding : ..
+    ## validation : .

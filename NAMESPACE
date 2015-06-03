@@ -2,5 +2,6 @@
 
 export(puny_decode)
 export(puny_encode)
+export(puny_tld_check)
 importFrom(Rcpp,evalCpp)
 useDynLib(punycode)

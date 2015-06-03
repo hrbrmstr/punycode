@@ -1,6 +1,6 @@
 Package: punycode
 Type: Package
-Title: Encode, decode and validate international domain names
+Title: Encode, Decode and Validate International Domain Names
 Version: 0.1.0
 Date: 2015-06-03
 Author: Bob Rudis (@hrbrmstr)
@@ -9,7 +9,7 @@ Description: A toolkit for encoding, decoding and validating international
              domain names.
 URL: http://github.com/hrbrmstr/punycode
 BugReports: https://github.com/hrbrmstr/punycode/issues
-License: MIT + file LICENSE
+License: GPL-2
 Suggests:
     testthat
 Depends:

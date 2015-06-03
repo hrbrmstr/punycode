@@ -4,6 +4,7 @@
 #include <locale.h>
 #include <stringprep.h>
 #include <idna.h>
+#include <tld.h>
 
 #include <Rcpp.h>
 using namespace Rcpp;
@@ -18,8 +19,7 @@ using namespace Rcpp;
 //' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html}
 //'
 //' @examples
-//' \dontrun{
-//' }
+//' puny_encode("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net")
 //' @export
 //[[Rcpp::export]]
 std::vector < std::string > puny_encode(CharacterVector domains) {
@@ -59,8 +59,7 @@ std::vector < std::string > puny_encode(CharacterVector domains) {
 //' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html}
 //'
 //' @examples
-//' \dontrun{
-//' }
+//' puny_decode("новый-год.com")
 //' @export
 //[[Rcpp::export]]
 std::vector < std::string > puny_decode(CharacterVector domains) {
@@ -82,6 +81,53 @@ std::vector < std::string > puny_decode(CharacterVector domains) {
     }
 
     free(p);
+
+  }
+
+  return output;
+
+}
+
+//' @title Check domains for validity
+//' @description Check international domain names for charset validity
+//'
+//' @param domains character vector of domains
+//'
+//' @return a logical vector
+//'
+//' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html}
+//'
+//' @examples
+//' puny_tld_check("gr€€n.no")
+//' @export
+//[[Rcpp::export]]
+std::vector < bool > puny_tld_check(CharacterVector domains) {
+
+  unsigned int input_size = domains.size();
+  std::vector < bool > output(input_size);
+
+  char *p;
+  int rc;
+  uint32_t *r;
+  size_t errpos;
+
+  for(unsigned int i = 0; i < input_size; i++) {
+
+    rc = idna_to_ascii_8z (domains[i], &p, 0);
+
+    if (rc != IDNA_SUCCESS) {
+      output[i] = false;
+    } else {
+      rc = idna_to_unicode_8z4z (p, &r, 0);
+      free(p);
+      if (rc != IDNA_SUCCESS) {
+        output[i] = false;
+      } else {
+        rc = tld_check_4z (r, &errpos, NULL);
+        free(r);
+        output[i] = (rc == TLD_SUCCESS);
+      }
+    }
 
   }
 

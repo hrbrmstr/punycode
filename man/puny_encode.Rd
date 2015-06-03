@@ -16,8 +16,7 @@ a character vector of IDNA domains
 Converts punycode domains to IDNA
 }
 \examples{
-\dontrun{
-}
+puny_encode("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net")
 }
 \seealso{
 \url{http://www.faqs.org/rfcs/rfc3492.html}

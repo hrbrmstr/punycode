@@ -27,3 +27,14 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// puny_tld_check
+std::vector < bool > puny_tld_check(CharacterVector domains);
+RcppExport SEXP punycode_puny_tld_check(SEXP domainsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< CharacterVector >::type domains(domainsSEXP);
+    __result = Rcpp::wrap(puny_tld_check(domains));
+    return __result;
+END_RCPP
+}
