@@ -4,9 +4,10 @@
 \name{punycode}
 \alias{punycode}
 \alias{punycode-package}
-\title{A package to handle punycode domains (encoding /)}
+\title{A package to handle punycode domains (encoding / decoding)}
 \description{
-A package to handle punycode domains (encoding /)
+It uses the GNU libidn \url{http://www.gnu.org/software/libidn/} library and
+provides functions to encode & decode international domain names.
 }
 \author{
 Bob Rudis (@hrbrmstr)

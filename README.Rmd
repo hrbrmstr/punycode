@@ -7,13 +7,12 @@ output:
     variant: markdown_github
 ---
 
-punycode is an R package to work with punycode (RFC3492) domains.
+punycode is an R package to work with punycode (RFC3492) domains and relies on the [GNU libidn](http://www.gnu.org/software/libidn/) library for the hard parts.
 
 The following functions are implemented:
 
 - `puny_encode`
 - `puny_deocde`
-
 
 ### Installation
 
