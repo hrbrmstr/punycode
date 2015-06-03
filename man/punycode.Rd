@@ -4,9 +4,9 @@
 \name{punycode}
 \alias{punycode}
 \alias{punycode-package}
-\title{A package to handle punycode domains}
+\title{A package to handle punycode domains (encoding /)}
 \description{
-A package to handle punycode domains
+A package to handle punycode domains (encoding /)
 }
 \author{
 Bob Rudis (@hrbrmstr)

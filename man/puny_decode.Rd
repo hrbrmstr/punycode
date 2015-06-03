@@ -7,10 +7,10 @@
 puny_decode(domains)
 }
 \arguments{
-\item{domains}{IDNA domains}
+\item{domains}{character vector of IDNA domains}
 }
 \value{
-a vector of punycode domains
+a character vector of punycode domains
 }
 \description{
 Converts IDNA domains to punycode

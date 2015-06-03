@@ -7,15 +7,13 @@ output:
     variant: markdown_github
 ---
 
-punycode is ...
+punycode is an R package to work with punycode (RFC3492) domains.
 
 The following functions are implemented:
 
-The following data sets are included:
+- `puny_encode`
+- `puny_deocde`
 
-### News
-
-- Version  released
 
 ### Installation
 
@@ -34,6 +32,31 @@ library(punycode)
 
 # current verison
 packageVersion("punycode")
+
+ascii_doms <- c("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net",
+"xn----0mcgcx6kho30j.com",
+"xn----9hciecaaawbbp1b1cd.net",
+"xn----9sbmbaig5bd2adgo.com",
+"xn----ctbeewwhe7i.com",
+"xn----ieuycya4cyb1b7jwa4fc8h4718bnq8c.com",
+"xn----ny6a58fr8c8rtpsucir8k1bo62a.net",
+"xn----peurf0asz4dzaln0qm161er8pd.biz",
+"xn----twfb7ei8dwjzbf9dg.com",
+"xn----ymcabp2br3mk93k.com")
+
+intnl_doms <- c("ثبت-دومین.com",
+"טיול-לפיליפינים.net",
+"бизнес-тренер.com",
+"новый-год.com",
+"東京ライブ-バルーンスタンド.com",
+"看護師高収入-求人.net",
+"ユベラ-贅沢ポリフェノール.biz",
+"เด็ก-ภูเก็ต.com",
+"ایران-هاست.com")
+
+puny_encode(ascii_doms)
+
+puny_decode(intnl_doms)
 
 ```
 

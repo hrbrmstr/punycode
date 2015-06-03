@@ -11,9 +11,9 @@ using namespace Rcpp;
 //' @title Encode punycode domains to IDNA
 //' @description Converts punycode domains to IDNA
 //'
-//' @param domains IDNA domains
+//' @param domains character vector of IDNA domains
 //'
-//' @return a vector of IDNA domains
+//' @return a character vector of IDNA domains
 //'
 //' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html}
 //'
@@ -52,9 +52,9 @@ std::vector < std::string > puny_encode(CharacterVector domains) {
 //' @title Decode IDNA domains to punycode
 //' @description Converts IDNA domains to punycode
 //'
-//' @param domains IDNA domains
+//' @param domains character vector of IDNA domains
 //'
-//' @return a vector of punycode domains
+//' @return a character vector of punycode domains
 //'
 //' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html}
 //'
@@ -88,4 +88,3 @@ std::vector < std::string > puny_decode(CharacterVector domains) {
   return output;
 
 }
-
