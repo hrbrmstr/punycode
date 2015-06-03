@@ -71,10 +71,11 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Wed Jun  3 13:59:05 2015"
+    ## [1] "Wed Jun  3 14:05:37 2015"
 
 ``` r
 test_dir("tests/")
 ```
 
-    ## basic functionality :
+    ## encoding : ..
+    ## decoding : ..
