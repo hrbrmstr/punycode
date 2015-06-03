@@ -1,0 +1,23 @@
+Package: punycode
+Type: Package
+Title: punycode title goes here
+Version: 1.0
+Date: 2015-06-03
+Author: Bob Rudis (@hrbrmstr)
+Maintainer: Bob Rudis <bob@rudis.net>
+Description: punycode description goes here
+URL: http://github.com/hrbrmstr/punycode
+BugReports: https://github.com/hrbrmstr/punycode/issues
+License: MIT + file LICENSE
+Suggests:
+    testthat
+Depends:
+    R (>= 3.0.0),
+    devtools,
+    httr (>= 0.3.0),
+    stringr,
+    dplyr,
+    httr
+Imports:
+    Rcpp (>= 0.11.2)
+LinkingTo: BH, Rcpp

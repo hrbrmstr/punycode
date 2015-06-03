@@ -1,0 +1,50 @@
+---
+title: "README"
+author: "Bob Rudis"
+date: June 03, 2015
+output:
+  md_document:
+    variant: markdown_github
+---
+
+punycode is ...
+
+The following functions are implemented:
+
+The following data sets are included:
+
+### News
+
+- Version  released
+
+### Installation
+
+```{r eval=FALSE}
+devtools::install_github("hrbrmstr/punycode")
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+options(width=120)
+```
+
+### Usage
+
+```{r}
+library(punycode)
+
+# current verison
+packageVersion("punycode")
+
+```
+
+### Test Results
+
+```{r}
+library(punycode)
+library(testthat)
+
+date()
+
+test_dir("tests/")
+```
+
