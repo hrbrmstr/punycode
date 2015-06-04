@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hrbrmstr/punycode.svg)](https://travis-ci.org/hrbrmstr/punycode)
+
 punycode is an R package to work with punycode (RFC3492) domains and relies on the [GNU libidn](http://www.gnu.org/software/libidn/) library for the hard parts.
 
 Tested on Mac OS X & Ubuntu. It *should* work on Windows provided you install `libidn`.
@@ -85,7 +87,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Wed Jun  3 18:00:24 2015"
+    ## [1] "Wed Jun  3 20:30:27 2015"
 
 ``` r
 test_dir("tests/")
@@ -94,3 +96,5 @@ test_dir("tests/")
     ## encoding : ..
     ## decoding : ..
     ## validation : .
+    ## 
+    ## You rock!
