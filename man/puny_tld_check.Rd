@@ -16,7 +16,7 @@ a logical vector
 Check international domain names for charset validity
 }
 \examples{
-puny_tld_check(c("gr€€n.no", "rudis.net"))
+# see the vignette
 }
 \seealso{
 \url{http://www.faqs.org/rfcs/rfc3492.html} and

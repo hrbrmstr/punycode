@@ -6,8 +6,7 @@
 #' @return logical vector (\code{TRUE} if Punycode test passed)
 #' @export
 #' @examples
-#' is_punycode("новый-год.com", "rudis.net",
-#'             "xn----peurf0asz4dzaln0qm161er8pd.biz")
+#' # see the vignette
 is_punycode <- function(domains) {
   !is.na(str_locate(domains, "(?i)^xn--")[,"start"])
 }
@@ -21,8 +20,7 @@ is_punycode <- function(domains) {
 #' @return logical vector (\code{TRUE} if IDNA test passed)
 #' @export
 #' @examples
-#' is_idna("новый-год.com", "rudis.net",
-#'         "xn----peurf0asz4dzaln0qm161er8pd.biz")
+#' # see the vignette
 is_idna <- function(domains) {
   !is.na(str_locate(domains, "[^[:ascii:]]")[,"start"])
 }

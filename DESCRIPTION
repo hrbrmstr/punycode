@@ -1,7 +1,7 @@
 Package: punycode
 Type: Package
 Title: Encode, Decode and Validate International Domain Names
-Version: 0.2.0
+Version: 0.2.1
 Date: 2015-06-04
 Author: Bob Rudis (@hrbrmstr) [aut, cre]
 Maintainer: Bob Rudis <bob@rudis.net>

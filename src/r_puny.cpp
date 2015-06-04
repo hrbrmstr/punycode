@@ -23,10 +23,9 @@ using namespace Rcpp;
 //'     \url{http://www.faqs.org/rfcs/rfc3490.html} and
 //'     \url{http://www.gnu.org/software/libidn/}
 //'
-//' @examples
-//' puny_encode(c("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net",
-//'               "xn----peurf0asz4dzaln0qm161er8pd.biz"))
 //' @export
+//' @examples
+//' # see the vignette
 //[[Rcpp::export]]
 std::vector < std::string > puny_encode(CharacterVector domains) {
 
@@ -69,9 +68,9 @@ std::vector < std::string > puny_encode(CharacterVector domains) {
 //'     \url{http://www.faqs.org/rfcs/rfc3490.html} and
 //'     \url{http://www.gnu.org/software/libidn/}
 //'
-//' @examples
-//' puny_decode(c("новый-год.com", "טיול-לפיליפינים."))
 //' @export
+//' @examples
+//' # see the vignette
 //[[Rcpp::export]]
 std::vector < std::string > puny_decode(CharacterVector domains) {
 
@@ -110,9 +109,9 @@ std::vector < std::string > puny_decode(CharacterVector domains) {
 //'     \url{http://www.faqs.org/rfcs/rfc3490.html} and
 //'     \url{http://www.gnu.org/software/libidn/}
 //'
-//' @examples
-//' puny_tld_check(c("gr€€n.no", "rudis.net"))
 //' @export
+//' @examples
+//' # see the vignette
 //[[Rcpp::export]]
 std::vector < bool > puny_tld_check(CharacterVector domains) {
 

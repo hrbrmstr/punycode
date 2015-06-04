@@ -20,8 +20,7 @@ If there are any issues during the conversion, \code{"Invalid"} will
       be the value returned.
 }
 \examples{
-puny_encode(c("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net",
-              "xn----peurf0asz4dzaln0qm161er8pd.biz"))
+# see the vignette
 }
 \seealso{
 \url{http://www.faqs.org/rfcs/rfc3492.html} and

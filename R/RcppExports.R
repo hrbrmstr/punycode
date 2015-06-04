@@ -15,10 +15,9 @@
 #'     \url{http://www.faqs.org/rfcs/rfc3490.html} and
 #'     \url{http://www.gnu.org/software/libidn/}
 #'
-#' @examples
-#' puny_encode(c("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net",
-#'               "xn----peurf0asz4dzaln0qm161er8pd.biz"))
 #' @export
+#' @examples
+#' # see the vignette
 puny_encode <- function(domains) {
     .Call('punycode_puny_encode', PACKAGE = 'punycode', domains)
 }
@@ -37,9 +36,9 @@ puny_encode <- function(domains) {
 #'     \url{http://www.faqs.org/rfcs/rfc3490.html} and
 #'     \url{http://www.gnu.org/software/libidn/}
 #'
-#' @examples
-#' puny_decode(c("новый-год.com", "טיול-לפיליפינים."))
 #' @export
+#' @examples
+#' # see the vignette
 puny_decode <- function(domains) {
     .Call('punycode_puny_decode', PACKAGE = 'punycode', domains)
 }
@@ -55,9 +54,9 @@ puny_decode <- function(domains) {
 #'     \url{http://www.faqs.org/rfcs/rfc3490.html} and
 #'     \url{http://www.gnu.org/software/libidn/}
 #'
-#' @examples
-#' puny_tld_check(c("gr€€n.no", "rudis.net"))
 #' @export
+#' @examples
+#' # see the vignette
 puny_tld_check <- function(domains) {
     .Call('punycode_puny_tld_check', PACKAGE = 'punycode', domains)
 }

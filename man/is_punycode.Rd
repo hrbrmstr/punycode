@@ -16,7 +16,6 @@ logical vector (\code{TRUE} if Punycode test passed)
 Given a vector of domains, test if the domain is Punycode encdoed
 }
 \examples{
-is_punycode("новый-год.com", "rudis.net",
-            "xn----peurf0asz4dzaln0qm161er8pd.biz")
+# see the vignette
 }
 

@@ -20,7 +20,7 @@ If there are any issues during the conversion, \code{"Invalid"} will
       be the value returned.
 }
 \examples{
-puny_decode(c("новый-год.com", "טיול-לפיליפינים."))
+# see the vignette
 }
 \seealso{
 \url{http://www.faqs.org/rfcs/rfc3492.html} and

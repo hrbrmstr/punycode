@@ -1,3 +1,8 @@
+punycode 0.2.1
+===============
+
+* Moved all examples to vignette to pass CRAN checks
+
 punycode 0.2.0
 ===============
 
