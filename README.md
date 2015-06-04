@@ -87,7 +87,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Wed Jun  3 20:30:27 2015"
+    ## [1] "Wed Jun  3 20:31:44 2015"
 
 ``` r
 test_dir("tests/")
@@ -96,5 +96,3 @@ test_dir("tests/")
     ## encoding : ..
     ## decoding : ..
     ## validation : .
-    ## 
-    ## You rock!
