@@ -9,17 +9,23 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-//' @title Encode punycode domains to IDNA
-//' @description Converts punycode domains to IDNA
+//' @title Encode Punycode domains to IDNA
+//' @description Converts Punycode domains to IDNA.
 //'
 //' @param domains character vector of IDNA domains
 //'
 //' @return a character vector of IDNA domains
 //'
-//' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html}
+//' @note If there are any issues during the conversion, \code{"Invalid"} will
+//'       be the value returned.
+//'
+//' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html} and
+//'     \url{http://www.faqs.org/rfcs/rfc3490.html} and
+//'     \url{http://www.gnu.org/software/libidn/}
 //'
 //' @examples
-//' puny_encode("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net")
+//' puny_encode(c("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net",
+//'               "xn----peurf0asz4dzaln0qm161er8pd.biz"))
 //' @export
 //[[Rcpp::export]]
 std::vector < std::string > puny_encode(CharacterVector domains) {
@@ -30,7 +36,7 @@ std::vector < std::string > puny_encode(CharacterVector domains) {
   char *p;
   int rc;
 
-  for(unsigned int i = 0; i < input_size; i++) {
+  for (unsigned int i = 0; i < input_size; i++) {
 
     rc = idna_to_unicode_lzlz (domains[i], &p, 0);
 
@@ -49,17 +55,22 @@ std::vector < std::string > puny_encode(CharacterVector domains) {
 }
 
 
-//' @title Decode IDNA domains to punycode
-//' @description Converts IDNA domains to punycode
+//' @title Decode IDNA domains to Punycode
+//' @description Converts IDNA domains to Punycode
 //'
 //' @param domains character vector of IDNA domains
 //'
-//' @return a character vector of punycode domains
+//' @return a character vector of Punycode domains
 //'
-//' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html}
+//' @note If there are any issues during the conversion, \code{"Invalid"} will
+//'       be the value returned.
+//'
+//' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html} and
+//'     \url{http://www.faqs.org/rfcs/rfc3490.html} and
+//'     \url{http://www.gnu.org/software/libidn/}
 //'
 //' @examples
-//' puny_decode("новый-год.com")
+//' puny_decode(c("новый-год.com", "טיול-לפיליפינים."))
 //' @export
 //[[Rcpp::export]]
 std::vector < std::string > puny_decode(CharacterVector domains) {
@@ -70,7 +81,7 @@ std::vector < std::string > puny_decode(CharacterVector domains) {
   char *p;
   int rc;
 
-  for(unsigned int i = 0; i < input_size; i++) {
+  for (unsigned int i = 0; i < input_size; i++) {
 
     rc = idna_to_ascii_lz(domains[i], &p, 0);
 
@@ -95,10 +106,12 @@ std::vector < std::string > puny_decode(CharacterVector domains) {
 //'
 //' @return a logical vector
 //'
-//' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html}
+//' @seealso \url{http://www.faqs.org/rfcs/rfc3492.html} and
+//'     \url{http://www.faqs.org/rfcs/rfc3490.html} and
+//'     \url{http://www.gnu.org/software/libidn/}
 //'
 //' @examples
-//' puny_tld_check("gr€€n.no")
+//' puny_tld_check(c("gr€€n.no", "rudis.net"))
 //' @export
 //[[Rcpp::export]]
 std::vector < bool > puny_tld_check(CharacterVector domains) {
@@ -111,7 +124,13 @@ std::vector < bool > puny_tld_check(CharacterVector domains) {
   uint32_t *r;
   size_t errpos;
 
-  for(unsigned int i = 0; i < input_size; i++) {
+  for (unsigned int i = 0; i < input_size; i++) {
+
+    // if there are any basic conversion errors before the tld check
+    // that means there is a problem with the data and that it should
+    // be considered invalid. also, if there are any other return codes
+    // from the tld check except for TLD_SUCCESS, that means the data
+    // is invalid as well.
 
     rc = idna_to_ascii_8z (domains[i], &p, 0);
 

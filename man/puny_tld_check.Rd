@@ -16,9 +16,11 @@ a logical vector
 Check international domain names for charset validity
 }
 \examples{
-puny_tld_check("gr€€n.no")
+puny_tld_check(c("gr€€n.no", "rudis.net"))
 }
 \seealso{
-\url{http://www.faqs.org/rfcs/rfc3492.html}
+\url{http://www.faqs.org/rfcs/rfc3492.html} and
+    \url{http://www.faqs.org/rfcs/rfc3490.html} and
+    \url{http://www.gnu.org/software/libidn/}
 }
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{puny_decode}
 \alias{puny_decode}
-\title{Decode IDNA domains to punycode}
+\title{Decode IDNA domains to Punycode}
 \usage{
 puny_decode(domains)
 }
@@ -10,15 +10,21 @@ puny_decode(domains)
 \item{domains}{character vector of IDNA domains}
 }
 \value{
-a character vector of punycode domains
+a character vector of Punycode domains
 }
 \description{
-Converts IDNA domains to punycode
+Converts IDNA domains to Punycode
+}
+\note{
+If there are any issues during the conversion, \code{"Invalid"} will
+      be the value returned.
 }
 \examples{
-puny_decode("новый-год.com")
+puny_decode(c("новый-год.com", "טיול-לפיליפינים."))
 }
 \seealso{
-\url{http://www.faqs.org/rfcs/rfc3492.html}
+\url{http://www.faqs.org/rfcs/rfc3492.html} and
+    \url{http://www.faqs.org/rfcs/rfc3490.html} and
+    \url{http://www.gnu.org/software/libidn/}
 }
 
