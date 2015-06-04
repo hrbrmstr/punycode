@@ -1,7 +1,7 @@
 ---
 title: "README"
 author: "Bob Rudis"
-date: June 03, 2015
+date: June 04, 2015
 output:
   md_document:
     variant: markdown_github
@@ -17,6 +17,8 @@ The following functions are implemented:
 - `puny_encode` : Encode domains
 - `puny_deocde` : Decode domains
 - `puny_tld_validate` : Validate charset of domains (i.e. is allowed in TLD)
+- `is_idna` : Test if a domain is IDNA encoded
+- `is_punycode` : Test if a domain is Punycode encoded
 
 ### Installation
 
@@ -67,6 +69,14 @@ puny_encode(ascii_doms)
 puny_decode(intnl_doms)
 
 puny_tld_check(for_valid)
+
+is_punycode(c("gr€€n.no", "זגורי-אימפריה-לצפייה-ישירה.net", "ثبت-دومین.com",
+"טיול-לפיליפינים.net", "xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net", "xn----0mcgcx6kho30j.com",
+"xn----9hciecaaawbbp1b1cd.net", "rudis.net"))
+
+is_idna(c("gr€€n.no", "זגורי-אימפריה-לצפייה-ישירה.net", "ثبت-دومین.com",
+"טיול-לפיליפינים.net", "xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net", "xn----0mcgcx6kho30j.com",
+"xn----9hciecaaawbbp1b1cd.net", "rudis.net"))
 
 ```
 

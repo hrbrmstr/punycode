@@ -14,7 +14,6 @@ test_that("we can decode domains", {
 
 })
 
-
 context("validation")
 test_that("we can validate domains", {
 
@@ -23,5 +22,20 @@ test_that("we can validate domains", {
 "xn----9hciecaaawbbp1b1cd.net", "rudis.net"))), equals(7))
 
 })
+
+context("is")
+test_that("we can test whether a domain is encoded", {
+
+  expect_that(sum(is_punycode(c("gr€€n.no", "זגורי-אימפריה-לצפייה-ישירה.net", "ثبت-دومین.com",
+"טיול-לפיליפינים.net", "xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net", "xn----0mcgcx6kho30j.com",
+"xn----9hciecaaawbbp1b1cd.net", "rudis.net"))), equals(3))
+
+  expect_that(sum(is_idna(c("gr€€n.no", "זגורי-אימפריה-לצפייה-ישירה.net", "ثبت-دومین.com",
+"טיול-לפיליפינים.net", "xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net", "xn----0mcgcx6kho30j.com",
+"xn----9hciecaaawbbp1b1cd.net", "rudis.net"))), equals(4))
+
+
+})
+
 
 

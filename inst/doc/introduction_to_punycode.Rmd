@@ -102,3 +102,15 @@ for_valid <- c("gr€€n.no", "זגורי-אימפריה-לצפייה-ישיר�
 
 puny_tld_check(for_valid)
 ```
+
+#### Testing
+
+```{r}
+is_punycode(c("gr€€n.no", "זגורי-אימפריה-לצפייה-ישירה.net", "ثبت-دومین.com",
+"טיול-לפיליפינים.net", "xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net", "xn----0mcgcx6kho30j.com",
+"xn----9hciecaaawbbp1b1cd.net", "rudis.net"))
+
+is_idna(c("gr€€n.no", "זגורי-אימפריה-לצפייה-ישירה.net", "ثبت-دومین.com",
+"טיול-לפיליפינים.net", "xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net", "xn----0mcgcx6kho30j.com",
+"xn----9hciecaaawbbp1b1cd.net", "rudis.net"))
+```

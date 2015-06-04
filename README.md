@@ -9,6 +9,8 @@ The following functions are implemented:
 -   `puny_encode` : Encode domains
 -   `puny_deocde` : Decode domains
 -   `puny_tld_validate` : Validate charset of domains (i.e. is allowed in TLD)
+-   `is_idna` : Test if a domain is IDNA encoded
+-   `is_punycode` : Test if a domain is Punycode encoded
 
 ### Installation
 
@@ -25,7 +27,7 @@ library(punycode)
 packageVersion("punycode")
 ```
 
-    ## [1] '0.1.0'
+    ## [1] '0.2.0'
 
 ``` r
 ascii_doms <- c("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net",
@@ -78,6 +80,22 @@ puny_tld_check(for_valid)
 
     ## [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 
+``` r
+is_punycode(c("gr€€n.no", "זגורי-אימפריה-לצפייה-ישירה.net", "ثبت-دومین.com",
+"טיול-לפיליפינים.net", "xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net", "xn----0mcgcx6kho30j.com",
+"xn----9hciecaaawbbp1b1cd.net", "rudis.net"))
+```
+
+    ## [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE
+
+``` r
+is_idna(c("gr€€n.no", "זגורי-אימפריה-לצפייה-ישירה.net", "ثبت-دومین.com",
+"טיול-לפיליפינים.net", "xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net", "xn----0mcgcx6kho30j.com",
+"xn----9hciecaaawbbp1b1cd.net", "rudis.net"))
+```
+
+    ## [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE
+
 ### Test Results
 
 ``` r
@@ -87,7 +105,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Wed Jun  3 20:31:44 2015"
+    ## [1] "Thu Jun  4 16:45:08 2015"
 
 ``` r
 test_dir("tests/")
@@ -96,3 +114,4 @@ test_dir("tests/")
     ## encoding : ..
     ## decoding : ..
     ## validation : .
+    ## is : ..

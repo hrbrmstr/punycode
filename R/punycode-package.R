@@ -33,5 +33,6 @@
 #' @docType package
 #' @author Bob Rudis (@@hrbrmstr)
 #' @importFrom Rcpp evalCpp
+#' @importFrom stringr str_locate
 #' @useDynLib punycode
 NULL
