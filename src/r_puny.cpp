@@ -43,6 +43,8 @@ std::vector < std::string > puny_encode(CharacterVector domains) {
 
     rc = idna_to_unicode_lzlz (domains[i], &p, 0);
 
+    printf("%d", rc);
+
     if (rc != IDNA_SUCCESS) {
       output[i] = "Invalid";
     } else {
