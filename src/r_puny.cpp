@@ -39,6 +39,8 @@ std::vector < std::string > puny_encode(CharacterVector domains) {
   char *p;
   int rc;
 
+  setlocale (LC_ALL, "");
+
   for (unsigned int i = 0; i < input_size; i++) {
 
     rc = idna_to_unicode_lzlz (domains[i], &p, 0);
@@ -90,6 +92,8 @@ std::vector < std::string > puny_decode(CharacterVector domains) {
   char *p;
   int rc;
 
+  setlocale (LC_ALL, "");
+
   for (unsigned int i = 0; i < input_size; i++) {
 
     rc = idna_to_ascii_lz(domains[i], &p, 0);
@@ -136,6 +140,8 @@ std::vector < bool > puny_tld_check(CharacterVector domains) {
   int rc;
   uint32_t *r;
   size_t errpos;
+
+  setlocale (LC_ALL, "");
 
   for (unsigned int i = 0; i < input_size; i++) {
 
