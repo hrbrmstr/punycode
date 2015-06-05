@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.org/hrbrmstr/punycode.svg)](https://travis-ci.org/hrbrmstr/punycode)
 
-punycode is an R package to work with punycode (RFC3492) domains and relies on the [GNU libidn](http://www.gnu.org/software/libidn/) library for the hard parts.
+punycode is an R package to work with punycode (RFC3492) domains and relies on the [GNU IDN library](http://www.gnu.org/software/libidn/) for the hard parts.
 
-Tested on Mac OS X & Ubuntu. It *should* work on Windows provided you install `libidn`.
+Tested on Mac OS X & Ubuntu. It *should* work on Windows provided you install `libidn`. Anyone wanting to get this officially working on Windows gets accolades beyond imagining. You can install `libidn` on Ubuntu with `sudo apt-get install libidn11-dev` and on OS X with `brew install libidn`. `yum install libidn` seems to work on RedHat/CentOSish systems, too.
 
 The following functions are implemented:
 
@@ -27,7 +27,7 @@ library(punycode)
 packageVersion("punycode")
 ```
 
-    ## [1] '0.2.0'
+    ## [1] '0.2.2'
 
 ``` r
 ascii_doms <- c("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net",
@@ -105,7 +105,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Thu Jun  4 17:00:07 2015"
+    ## [1] "Fri Jun  5 18:11:08 2015"
 
 ``` r
 test_dir("tests/")

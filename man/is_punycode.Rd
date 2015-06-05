@@ -16,6 +16,11 @@ logical vector (\code{TRUE} if Punycode test passed)
 Given a vector of domains, test if the domain is Punycode encdoed
 }
 \examples{
+\dontrun{
+# See the vignette since character set problems prevent clean latex
+# function example builds
+vignette("introduction_to_punycode")
+}
 # see the vignette
 }
 

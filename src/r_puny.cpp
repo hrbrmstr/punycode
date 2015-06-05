@@ -25,7 +25,11 @@ using namespace Rcpp;
 //'
 //' @export
 //' @examples
-//' # see the vignette
+//' \dontrun{
+//' # See the vignette since character set problems prevent clean latex
+//' # function example builds
+//' vignette("introduction_to_punycode")
+//' }
 //[[Rcpp::export]]
 std::vector < std::string > puny_encode(CharacterVector domains) {
 
@@ -70,7 +74,11 @@ std::vector < std::string > puny_encode(CharacterVector domains) {
 //'
 //' @export
 //' @examples
-//' # see the vignette
+//' \dontrun{
+//' # See the vignette since character set problems prevent clean latex
+//' # function example builds
+//' vignette("introduction_to_punycode")
+//' }
 //[[Rcpp::export]]
 std::vector < std::string > puny_decode(CharacterVector domains) {
 
@@ -111,7 +119,11 @@ std::vector < std::string > puny_decode(CharacterVector domains) {
 //'
 //' @export
 //' @examples
-//' # see the vignette
+//' \dontrun{
+//' # See the vignette since character set problems prevent clean latex
+//' # function example builds
+//' vignette("introduction_to_punycode")
+//' }
 //[[Rcpp::export]]
 std::vector < bool > puny_tld_check(CharacterVector domains) {
 

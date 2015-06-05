@@ -6,6 +6,11 @@
 #' @return logical vector (\code{TRUE} if Punycode test passed)
 #' @export
 #' @examples
+#' \dontrun{
+#' # See the vignette since character set problems prevent clean latex
+#' # function example builds
+#' vignette("introduction_to_punycode")
+#' }
 #' # see the vignette
 is_punycode <- function(domains) {
   !is.na(str_locate(domains, "(?i)^xn--")[,"start"])
@@ -20,6 +25,11 @@ is_punycode <- function(domains) {
 #' @return logical vector (\code{TRUE} if IDNA test passed)
 #' @export
 #' @examples
+#' \dontrun{
+#' # See the vignette since character set problems prevent clean latex
+#' # function example builds
+#' vignette("introduction_to_punycode")
+#' }
 #' # see the vignette
 is_idna <- function(domains) {
   !is.na(str_locate(domains, "[^[:ascii:]]")[,"start"])

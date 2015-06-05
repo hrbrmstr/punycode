@@ -1,22 +1,29 @@
 Package: punycode
 Type: Package
 Title: Encode, Decode and Validate International Domain Names
-Version: 0.2.1
-Date: 2015-06-04
-Author: Bob Rudis (@hrbrmstr) [aut, cre]
+Version: 0.2.2
+Date: 2015-06-05
+Author: Bob Rudis <bob@rudis.net> [aut, cre]
 Maintainer: Bob Rudis <bob@rudis.net>
 Description: A toolkit for encoding, decoding and validating international
-             domain names.
+             domain names (IDNA or Punycode formats). In order to build and
+             install this package from source, the GNU IDN Library must be
+             present on the system and is available as a package on most
+             Linux distributions and installs cleanly on OS X and Windows.
 URL: http://github.com/hrbrmstr/punycode
+     http://www.gnu.org/software/libidn/
 BugReports: https://github.com/hrbrmstr/punycode/issues
 License: GPL-2
 Suggests:
     testthat,
-    knitr,
+    knitr
 Depends:
     R (>= 3.0.0),
 Imports:
     Rcpp (>= 0.11.2),
     stringr
 VignetteBuilder: knitr
+NeedsCompilation: yes
+Type: Package
+SystemRequirements: libidn
 LinkingTo: Rcpp

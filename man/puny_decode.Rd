@@ -20,7 +20,11 @@ If there are any issues during the conversion, \code{"Invalid"} will
       be the value returned.
 }
 \examples{
-# see the vignette
+\dontrun{
+# See the vignette since character set problems prevent clean latex
+# function example builds
+vignette("introduction_to_punycode")
+}
 }
 \seealso{
 \url{http://www.faqs.org/rfcs/rfc3492.html} and
