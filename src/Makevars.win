@@ -1,2 +1,2 @@
 PKG_CPPFLAGS = -I. -Ilibidn/i386/ -Ilibidn/i386/include/
-PKG_LIBS = -Llibidn/i386/lib/ -lidn
+PKG_LIBS = -Llibidn/i386/lib/ -lidn -liconv -lcharset
