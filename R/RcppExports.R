@@ -17,7 +17,11 @@
 #'
 #' @export
 #' @examples
-#' # see the vignette
+#' \dontrun{
+#' # See the vignette since character set problems prevent clean latex
+#' # function example builds
+#' vignette("introduction_to_punycode")
+#' }
 puny_encode <- function(domains) {
     .Call('punycode_puny_encode', PACKAGE = 'punycode', domains)
 }
@@ -38,7 +42,11 @@ puny_encode <- function(domains) {
 #'
 #' @export
 #' @examples
-#' # see the vignette
+#' \dontrun{
+#' # See the vignette since character set problems prevent clean latex
+#' # function example builds
+#' vignette("introduction_to_punycode")
+#' }
 puny_decode <- function(domains) {
     .Call('punycode_puny_decode', PACKAGE = 'punycode', domains)
 }
@@ -56,7 +64,11 @@ puny_decode <- function(domains) {
 #'
 #' @export
 #' @examples
-#' # see the vignette
+#' \dontrun{
+#' # See the vignette since character set problems prevent clean latex
+#' # function example builds
+#' vignette("introduction_to_punycode")
+#' }
 puny_tld_check <- function(domains) {
     .Call('punycode_puny_tld_check', PACKAGE = 'punycode', domains)
 }

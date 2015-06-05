@@ -27,7 +27,7 @@ library(punycode)
 packageVersion("punycode")
 ```
 
-    ## [1] '0.2.0'
+    ## [1] '0.2.2'
 
 ``` r
 ascii_doms <- c("xn------qpeiobbci9acacaca2c8a6ie7b9agmy.net",
@@ -105,7 +105,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Thu Jun  4 17:00:07 2015"
+    ## [1] "Fri Jun  5 10:00:12 2015"
 
 ``` r
 test_dir("tests/")
@@ -115,3 +115,5 @@ test_dir("tests/")
     ## decoding : ..
     ## validation : .
     ## is : ..
+    ## 
+    ## You rock!

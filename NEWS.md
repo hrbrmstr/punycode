@@ -1,3 +1,8 @@
+punycode 0.2.2
+===============
+
+* CRAN Submission
+
 punycode 0.2.1
 ===============
 

@@ -1,4 +1,14 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.travis\.yml$
-^.*md$
+^\.Rhistory$
+^README.md$
+^README.Rmd$
+^\.gitignore$
+^src/.*\.a$
+^src/.*\.so$
+^src/.*\.dll$
+^src/.*\.o$
+^\.git
+^\.DS_Store$
+^NEWS.md$
