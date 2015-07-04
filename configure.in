@@ -11,7 +11,6 @@ define([maintainer], esyscmd([sh -c "grep Maintainer: DESCRIPTION | sed -e 's/^M
 AC_INIT(punycode, [pkgversion], [maintainer])
 
 AC_REQUIRE_CPP
-AC_REQUIRE([AC_PROG_CXX])
 
 # Check of R
 AC_DEFUN(AC_PROG_R, [AC_CHECK_PROG(R,R,yes)])
