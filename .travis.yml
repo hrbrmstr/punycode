@@ -1,23 +1,15 @@
-language: c
+language: r
+warnings_are_errors: true
+sudo: required
 
-before_install:
-  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-  - chmod 755 ./travis-tool.sh
-  - ./travis-tool.sh bootstrap
-  - sudo apt-get install libidn11-dev
+env:
+ global:
+   - CRAN: http://cran.rstudio.com
 
-install:
-  - ./travis-tool.sh install_deps
+apt_packages:
+  - libidn11-dev
 
-script: ./travis-tool.sh run_tests
-
-on_failure:
-  - ./travis-tool.sh dump_logs
-
-branches:
-  except:
-  - /-expt$/
-  notifications:
-    email:
-      on_success: change
-      on_failure: change
+notifications:
+  email:
+    on_success: change
+    on_failure: change

@@ -1,0 +1,73 @@
+# -*- mode: autoconf; indent-tabs-mode: nil; autoconf-indentation: 2; tab-width: 2; -*- ***
+#
+# $Id$
+
+# require at least autoconf 2.50
+AC_PREREQ(2.60)
+
+# Process this file with autoconf to produce a configure script.
+define([pkgversion], esyscmd([sh -c "grep Version: DESCRIPTION | cut -d' ' -f2 | tr -d '\n'"]))dnl
+define([maintainer], esyscmd([sh -c "grep Maintainer: DESCRIPTION | sed -e 's/^Maintainer: //' | tr -d '\n'"]))dnl
+AC_INIT(punycode, [pkgversion], [maintainer])
+
+AC_REQUIRE_CPP
+AC_REQUIRE([AC_PROG_CXX])
+
+# Check of R
+AC_DEFUN(AC_PROG_R, [AC_CHECK_PROG(R,R,yes)])
+AC_PROG_R
+AC_PROG_CXX
+
+# Next segment by Kurt, and once contributed to RQuantLib
+: ${R_HOME=`R RHOME`}
+if test -z "${R_HOME}"; then
+    AC_MSG_ERROR([Could not determine R_HOME.])
+fi
+CXX=`${R_HOME}/bin/R CMD config CXX`
+CXXFLAGS=`"${R_HOME}/bin/R" CMD config CXXFLAGS`
+
+## look for Rscript, but use the one found via R_HOME to allow for multiple installations
+AC_DEFUN(AC_PROG_RSCRIPT, [AC_CHECK_PROG(RSCRIPT,Rscript,yes)])
+AC_PROG_RSCRIPT
+if test x"${RSCRIPT}" == x"yes" ; then
+    ## AC_MSG_RESULT([yes])
+    ## link flag providing libary as well as path to library, and optionally rpath
+    RCPP_LDFLAGS=`${R_HOME}/bin/Rscript -e 'Rcpp:::LdFlags()'`
+else
+    #AC_MSG_RESULT([no])
+    echo "
+  Your installation does not appear to have Rscript installed.
+
+  Please make sure that you have a working and complete R installation.
+"
+    exit 1
+fi
+
+
+AC_ARG_WITH(libidn, AC_HELP_STRING([--with-libidn=[DIR]],
+                                [Support IDN (needs GNU Libidn)]),
+  libidn=$withval, libidn=yes)
+if test "$libidn" != "no"; then
+  if test "$libidn" != "yes"; then
+    LDFLAGS="${LDFLAGS} -L$libidn/lib"
+    CPPFLAGS="${CPPFLAGS} -I$libidn/include"
+  fi
+  AC_CHECK_HEADER(idna.h,
+    AC_CHECK_LIB(idn, stringprep_check_version,
+      [libidn=yes LIBS="${LIBS} -lidn"], libidn=no),
+    libidn=no)
+fi
+if test "$libidn" != "no" ; then
+  AC_DEFINE(LIBIDN, 1, [Define to 1 if you want IDN support.])
+else
+  AC_MSG_ERROR([Libidn not found. Please install the GNU IDN library.])
+  exit 1
+fi
+AC_MSG_CHECKING([if Libidn should be used])
+AC_MSG_RESULT($libidn)
+
+AC_SUBST([CXXFLAGS],["${CXXFLAGS}"])
+AC_SUBST(CPPFLAGS)
+AC_SUBST(LDFLAGS)
+
+AC_OUTPUT(src/Makevars)

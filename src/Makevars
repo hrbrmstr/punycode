@@ -1,1 +1,2 @@
-PKG_LIBS = -lidn
+PKG_CPPFLAGS= -DNDEBUG -g
+PKG_LIBS= -lidn
