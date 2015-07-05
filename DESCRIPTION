@@ -1,8 +1,8 @@
 Package: punycode
 Type: Package
 Title: Encode, Decode and Validate International Domain Names
-Version: 0.2.2
-Date: 2015-06-05
+Version: 0.2.5
+Date: 2015-07-04
 Author: Bob Rudis <bob@rudis.net> [aut, cre]
 Maintainer: Bob Rudis <bob@rudis.net>
 Description: A toolkit for encoding, decoding and validating international
@@ -15,13 +15,14 @@ URL: http://github.com/hrbrmstr/punycode
 BugReports: https://github.com/hrbrmstr/punycode/issues
 License: GPL-2
 Suggests:
-    testthat,
+    testthat(>= 0.10.0),
     knitr
 Depends:
-    R (>= 3.0.0),
+    R (>= 3.2.0),
 Imports:
     Rcpp (>= 0.11.2),
-    stringr
+    stringr (>= 1.0.0),
+    stringi (>= 0.5-5)
 VignetteBuilder: knitr
 NeedsCompilation: yes
 Type: Package

@@ -30,8 +30,8 @@ Kernel configured for up to 4 processors.
 Processor type: x86_64h (Intel x86-64h Haswell)
 Processors active: 0 1 2 3
 Primary memory available: 16.00 gigabytes
-Default processor set: 324 tasks, 1579 threads, 4 processors
-Load average: 3.52, Mach factor: 1.41
+Default processor set: 320 tasks, 1443 threads, 4 processors
+Load average: 1.91, Mach factor: 2.07
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
@@ -51,71 +51,71 @@ PATH: /usr/texbin
 ## Core tests. ##
 ## ----------- ##
 
-configure:2028: checking for gcc
-configure:2044: found /usr/bin/gcc
-configure:2055: result: gcc
-configure:2284: checking for C compiler version
-configure:2293: gcc --version >&5
+configure:2074: checking for gcc
+configure:2090: found /usr/bin/gcc
+configure:2101: result: gcc
+configure:2330: checking for C compiler version
+configure:2339: gcc --version >&5
 Apple LLVM version 6.1.0 (clang-602.0.53) (based on LLVM 3.6.0svn)
 Target: x86_64-apple-darwin14.4.0
 Thread model: posix
 Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
-configure:2304: $? = 0
-configure:2293: gcc -v >&5
+configure:2350: $? = 0
+configure:2339: gcc -v >&5
 Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
 Apple LLVM version 6.1.0 (clang-602.0.53) (based on LLVM 3.6.0svn)
 Target: x86_64-apple-darwin14.4.0
 Thread model: posix
-configure:2304: $? = 0
-configure:2293: gcc -V >&5
+configure:2350: $? = 0
+configure:2339: gcc -V >&5
 clang: error: argument to '-V' is missing (expected 1 value)
 clang: error: no input files
-configure:2304: $? = 1
-configure:2293: gcc -qversion >&5
+configure:2350: $? = 1
+configure:2339: gcc -qversion >&5
 clang: error: unknown argument: '-qversion'
 clang: error: no input files
-configure:2304: $? = 1
-configure:2324: checking whether the C compiler works
-configure:2346: gcc -UNDEBUG -Wall -pedantic -g -O0   conftest.c  >&5
-configure:2350: $? = 0
-configure:2398: result: yes
-configure:2401: checking for C compiler default output file name
-configure:2403: result: a.out
-configure:2409: checking for suffix of executables
-configure:2416: gcc -o conftest -UNDEBUG -Wall -pedantic -g -O0   conftest.c  >&5
-configure:2420: $? = 0
-configure:2442: result: 
-configure:2464: checking whether we are cross compiling
-configure:2472: gcc -o conftest -UNDEBUG -Wall -pedantic -g -O0   conftest.c  >&5
-configure:2476: $? = 0
-configure:2483: ./conftest
-configure:2487: $? = 0
-configure:2502: result: no
-configure:2507: checking for suffix of object files
-configure:2529: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:2350: $? = 1
+configure:2370: checking whether the C compiler works
+configure:2392: gcc -UNDEBUG -Wall -pedantic -g -O0   conftest.c  >&5
+configure:2396: $? = 0
+configure:2444: result: yes
+configure:2447: checking for C compiler default output file name
+configure:2449: result: a.out
+configure:2455: checking for suffix of executables
+configure:2462: gcc -o conftest -UNDEBUG -Wall -pedantic -g -O0   conftest.c  >&5
+configure:2466: $? = 0
+configure:2488: result: 
+configure:2510: checking whether we are cross compiling
+configure:2518: gcc -o conftest -UNDEBUG -Wall -pedantic -g -O0   conftest.c  >&5
+configure:2522: $? = 0
+configure:2529: ./conftest
 configure:2533: $? = 0
-configure:2554: result: o
-configure:2558: checking whether we are using the GNU C compiler
-configure:2577: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:2577: $? = 0
-configure:2586: result: yes
-configure:2595: checking whether gcc accepts -g
-configure:2615: gcc -c -g  conftest.c >&5
-configure:2615: $? = 0
-configure:2656: result: yes
-configure:2673: checking for gcc option to accept ISO C89
-configure:2736: gcc  -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:2736: $? = 0
-configure:2749: result: none needed
-configure:2775: checking how to run the C preprocessor
-configure:2806: gcc -E  conftest.c
-configure:2806: $? = 0
-configure:2820: gcc -E  conftest.c
+configure:2548: result: no
+configure:2553: checking for suffix of object files
+configure:2575: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:2579: $? = 0
+configure:2600: result: o
+configure:2604: checking whether we are using the GNU C compiler
+configure:2623: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:2623: $? = 0
+configure:2632: result: yes
+configure:2641: checking whether gcc accepts -g
+configure:2661: gcc -c -g  conftest.c >&5
+configure:2661: $? = 0
+configure:2702: result: yes
+configure:2719: checking for gcc option to accept ISO C89
+configure:2782: gcc  -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:2782: $? = 0
+configure:2795: result: none needed
+configure:2821: checking how to run the C preprocessor
+configure:2852: gcc -E  conftest.c
+configure:2852: $? = 0
+configure:2866: gcc -E  conftest.c
 conftest.c:9:10: fatal error: 'ac_nonexistent.h' file not found
 #include <ac_nonexistent.h>
          ^
 1 error generated.
-configure:2820: $? = 1
+configure:2866: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "punycode"
@@ -126,15 +126,15 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:2845: result: gcc -E
-configure:2865: gcc -E  conftest.c
-configure:2865: $? = 0
-configure:2879: gcc -E  conftest.c
+configure:2891: result: gcc -E
+configure:2911: gcc -E  conftest.c
+configure:2911: $? = 0
+configure:2925: gcc -E  conftest.c
 conftest.c:9:10: fatal error: 'ac_nonexistent.h' file not found
 #include <ac_nonexistent.h>
          ^
 1 error generated.
-configure:2879: $? = 1
+configure:2925: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "punycode"
@@ -145,77 +145,109 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:2914: checking for R
-configure:2930: found /usr/bin/R
-configure:2941: result: yes
-configure:2962: checking for Rscript
-configure:2978: found /usr/bin/Rscript
-configure:2989: result: yes
-configure:3025: checking for grep that handles long lines and -e
-configure:3083: result: /usr/bin/grep
-configure:3088: checking for egrep
-configure:3150: result: /usr/bin/grep -E
-configure:3155: checking for ANSI C header files
-configure:3175: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:3175: $? = 0
-configure:3248: gcc -o conftest -UNDEBUG -Wall -pedantic -g -O0   conftest.c  >&5
-configure:3248: $? = 0
-configure:3248: ./conftest
-configure:3248: $? = 0
-configure:3259: result: yes
-configure:3272: checking for sys/types.h
-configure:3272: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:3272: $? = 0
-configure:3272: result: yes
-configure:3272: checking for sys/stat.h
-configure:3272: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:3272: $? = 0
-configure:3272: result: yes
-configure:3272: checking for stdlib.h
-configure:3272: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:3272: $? = 0
-configure:3272: result: yes
-configure:3272: checking for string.h
-configure:3272: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:3272: $? = 0
-configure:3272: result: yes
-configure:3272: checking for memory.h
-configure:3272: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:3272: $? = 0
-configure:3272: result: yes
-configure:3272: checking for strings.h
-configure:3272: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:3272: $? = 0
-configure:3272: result: yes
-configure:3272: checking for inttypes.h
-configure:3272: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:3272: $? = 0
-configure:3272: result: yes
-configure:3272: checking for stdint.h
-configure:3272: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:3272: $? = 0
-configure:3272: result: yes
-configure:3272: checking for unistd.h
-configure:3272: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:3272: $? = 0
-configure:3272: result: yes
-configure:3284: checking idna.h usability
-configure:3284: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
-configure:3284: $? = 0
-configure:3284: result: yes
-configure:3284: checking idna.h presence
-configure:3284: gcc -E  conftest.c
-configure:3284: $? = 0
-configure:3284: result: yes
-configure:3284: checking for idna.h
-configure:3284: result: yes
-configure:3286: checking for stringprep_check_version in -lidn
-configure:3357: gcc -o conftest -UNDEBUG -Wall -pedantic -g -O0   conftest.c -lidn   >&5
-configure:3357: $? = 0
-configure:3366: result: yes
-configure:3388: checking if Libidn should be used
-configure:3390: result: yes
-configure:3548: creating ./config.status
+configure:2960: checking for R
+configure:2976: found /usr/bin/R
+configure:2987: result: yes
+configure:3053: checking for g++
+configure:3069: found /usr/bin/g++
+configure:3080: result: g++
+configure:3107: checking for C++ compiler version
+configure:3116: g++ --version >&5
+Apple LLVM version 6.1.0 (clang-602.0.53) (based on LLVM 3.6.0svn)
+Target: x86_64-apple-darwin14.4.0
+Thread model: posix
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+configure:3127: $? = 0
+configure:3116: g++ -v >&5
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 6.1.0 (clang-602.0.53) (based on LLVM 3.6.0svn)
+Target: x86_64-apple-darwin14.4.0
+Thread model: posix
+configure:3127: $? = 0
+configure:3116: g++ -V >&5
+clang: error: argument to '-V' is missing (expected 1 value)
+clang: error: no input files
+configure:3127: $? = 1
+configure:3116: g++ -qversion >&5
+clang: error: unknown argument: '-qversion'
+clang: error: no input files
+configure:3127: $? = 1
+configure:3131: checking whether we are using the GNU C++ compiler
+configure:3150: g++ -c -UNDEBUG -Wall -pedantic -g -O0  conftest.cpp >&5
+configure:3150: $? = 0
+configure:3159: result: yes
+configure:3168: checking whether g++ accepts -g
+configure:3188: g++ -c -g  conftest.cpp >&5
+configure:3188: $? = 0
+configure:3229: result: yes
+configure:3265: checking for Rscript
+configure:3281: found /usr/bin/Rscript
+configure:3292: result: yes
+configure:3328: checking for grep that handles long lines and -e
+configure:3386: result: /usr/bin/grep
+configure:3391: checking for egrep
+configure:3453: result: /usr/bin/grep -E
+configure:3458: checking for ANSI C header files
+configure:3478: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:3478: $? = 0
+configure:3551: gcc -o conftest -UNDEBUG -Wall -pedantic -g -O0   conftest.c  >&5
+configure:3551: $? = 0
+configure:3551: ./conftest
+configure:3551: $? = 0
+configure:3562: result: yes
+configure:3575: checking for sys/types.h
+configure:3575: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:3575: $? = 0
+configure:3575: result: yes
+configure:3575: checking for sys/stat.h
+configure:3575: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:3575: $? = 0
+configure:3575: result: yes
+configure:3575: checking for stdlib.h
+configure:3575: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:3575: $? = 0
+configure:3575: result: yes
+configure:3575: checking for string.h
+configure:3575: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:3575: $? = 0
+configure:3575: result: yes
+configure:3575: checking for memory.h
+configure:3575: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:3575: $? = 0
+configure:3575: result: yes
+configure:3575: checking for strings.h
+configure:3575: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:3575: $? = 0
+configure:3575: result: yes
+configure:3575: checking for inttypes.h
+configure:3575: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:3575: $? = 0
+configure:3575: result: yes
+configure:3575: checking for stdint.h
+configure:3575: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:3575: $? = 0
+configure:3575: result: yes
+configure:3575: checking for unistd.h
+configure:3575: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:3575: $? = 0
+configure:3575: result: yes
+configure:3587: checking idna.h usability
+configure:3587: gcc -c -UNDEBUG -Wall -pedantic -g -O0  conftest.c >&5
+configure:3587: $? = 0
+configure:3587: result: yes
+configure:3587: checking idna.h presence
+configure:3587: gcc -E  conftest.c
+configure:3587: $? = 0
+configure:3587: result: yes
+configure:3587: checking for idna.h
+configure:3587: result: yes
+configure:3589: checking for stringprep_check_version in -lidn
+configure:3660: gcc -o conftest -UNDEBUG -Wall -pedantic -g -O0   conftest.c -lidn   >&5
+configure:3660: $? = 0
+configure:3669: result: yes
+configure:3691: checking if Libidn should be used
+configure:3693: result: yes
+configure:3853: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -232,13 +264,16 @@ generated by GNU Autoconf 2.69.  Invocation command line was
 
 on penny-one.local
 
-config.status:725: creating src/Makevars
+config.status:728: creating src/Makevars
 
 ## ---------------- ##
 ## Cache variables. ##
 ## ---------------- ##
 
 ac_cv_c_compiler_gnu=yes
+ac_cv_cxx_compiler_gnu=yes
+ac_cv_env_CCC_set=
+ac_cv_env_CCC_value=
 ac_cv_env_CC_set=
 ac_cv_env_CC_value=
 ac_cv_env_CFLAGS_set=set
@@ -247,6 +282,10 @@ ac_cv_env_CPPFLAGS_set=
 ac_cv_env_CPPFLAGS_value=
 ac_cv_env_CPP_set=
 ac_cv_env_CPP_value=
+ac_cv_env_CXXFLAGS_set=set
+ac_cv_env_CXXFLAGS_value='-UNDEBUG -Wall -pedantic -g -O0'
+ac_cv_env_CXX_set=
+ac_cv_env_CXX_value=
 ac_cv_env_LDFLAGS_set=
 ac_cv_env_LDFLAGS_value=
 ac_cv_env_LIBS_set=
@@ -276,8 +315,10 @@ ac_cv_prog_CPP='gcc -E'
 ac_cv_prog_R=yes
 ac_cv_prog_RSCRIPT=yes
 ac_cv_prog_ac_ct_CC=gcc
+ac_cv_prog_ac_ct_CXX=g++
 ac_cv_prog_cc_c89=
 ac_cv_prog_cc_g=yes
+ac_cv_prog_cxx_g=yes
 
 ## ----------------- ##
 ## Output variables. ##
@@ -287,6 +328,8 @@ CC='gcc'
 CFLAGS='-UNDEBUG -Wall -pedantic -g -O0'
 CPP='gcc -E'
 CPPFLAGS=''
+CXX='clang++'
+CXXFLAGS='-Wall -mtune=core2 -g -O2'
 DEFS='-DPACKAGE_NAME=\"punycode\" -DPACKAGE_TARNAME=\"punycode\" -DPACKAGE_VERSION=\"0.2.2\" -DPACKAGE_STRING=\"punycode\ 0.2.2\" -DPACKAGE_BUGREPORT=\"Bob\ Rudis\ \<bob@rudis.net\>\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLIBIDN=1'
 ECHO_C='\c'
 ECHO_N=''
@@ -310,6 +353,7 @@ R='yes'
 RSCRIPT='yes'
 SHELL='/bin/sh'
 ac_ct_CC='gcc'
+ac_ct_CXX='g++'
 bindir='${exec_prefix}/bin'
 build_alias=''
 datadir='${datarootdir}'
