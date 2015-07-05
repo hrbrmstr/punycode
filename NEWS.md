@@ -1,3 +1,8 @@
+punycode 0.2.5
+===============
+
+* Added a configure script
+
 punycode 0.2.1
 ===============
 

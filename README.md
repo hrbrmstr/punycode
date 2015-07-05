@@ -105,7 +105,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Sat Jul  4 17:18:29 2015"
+    ## [1] "Sat Jul  4 21:01:35 2015"
 
 ``` r
 test_dir("tests/")
@@ -115,3 +115,5 @@ test_dir("tests/")
     ## decoding : ..
     ## validation : .
     ## is : ..
+    ## 
+    ## You are a coding rockstar!
