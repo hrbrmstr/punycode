@@ -3,7 +3,7 @@ Type: Package
 Title: Encode, Decode and Validate International Domain Names
 Version: 0.2.5
 Date: 2015-07-04
-Author: Bob Rudis <bob@rudis.net> [aut, cre]
+Author: Bob Rudis <bob@rudis.net> [aut, cre], Jeroen Ooms [ctb]
 Maintainer: Bob Rudis <bob@rudis.net>
 Description: A toolkit for encoding, decoding and validating international
              domain names (IDNA or Punycode formats). In order to build and
